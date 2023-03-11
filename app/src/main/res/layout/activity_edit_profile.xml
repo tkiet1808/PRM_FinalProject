@@ -6,4 +6,230 @@
     android:layout_height="match_parent"
     tools:context=".EditProfileActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="30dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/logo_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+
+                    android:scaleX="1.2"
+                    android:scaleY="1.2"
+                    app:srcCompat="@mipmap/ic_logo_foreground" />
+
+                <ImageView
+                    android:id="@+id/blank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:id="@+id/profile_icon"
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="right"
+                    android:scaleX="0.8"
+                    android:scaleY="0.8"
+                    app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="35dp"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:textColor="@color/teal_700"
+                android:text="Edit Profile" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="130dp"
+                android:layout_height="130dp"
+                android:layout_gravity="center"
+
+                android:layout_margin="10dp"
+                app:srcCompat="@drawable/avatar" />
+
+            <LinearLayout
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/wallet_image"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginRight="7dp"
+                    android:background="@drawable/border"
+                    app:srcCompat="@drawable/ic_baseline_account_balance_wallet_24" />
+
+                <HorizontalScrollView
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent">
+
+                    <EditText
+                        android:id="@+id/moneyNumber"
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+
+                        android:layout_weight="1"
+                        android:alpha="0.8"
+                        android:background="@drawable/money_color"
+                        android:gravity="center"
+                        android:text="100.000.000"
+                        android:textColor="@color/black_500"
+                        android:textSize="23dp" />
+                </HorizontalScrollView>
+
+                <EditText
+                    android:id="@+id/textView3"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="7dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/vnd_color"
+                    android:gravity="center"
+                    android:text="VND"
+                    android:textColor="@color/black_500"
+                    android:textSize="23dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/fullname_banner"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="1dp"
+                android:text="Full Name"
+                android:textColor="@color/black_500"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/fullname"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/border"
+                android:hint="Enter Your Full Name.."
+                android:text="Nguyễn Văn A"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/email_banner"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="1dp"
+                android:text="Email"
+
+                android:textColor="@color/black_500"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/border"
+                android:hint="Enter Your Email.."
+                android:text="kietxxxx@gmail.com"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/phone_banner"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="1dp"
+                android:text="Phone Number"
+                android:textColor="@color/black_500"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/phone"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/border"
+                android:hint="Enter Your Phone.."
+                android:text="090xxxx02312"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/address_banner"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="1dp"
+                android:text="Address"
+                android:textColor="@color/black_500"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/address"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/border"
+                android:hint="Enter Your Address.."
+                android:text="2xx/x Wall Street, District 9"
+                android:textSize="30dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/cancel_button"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#F44336"
+                    android:text="Cancel"
+                    android:textColor="@color/black_500"
+                    android:textSize="20dp" />
+
+                <Button
+                    android:id="@+id/save_button"
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="@color/teal_200"
+                    android:text="Save"
+                    android:textColor="@color/black_500"
+                    android:textSize="20dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

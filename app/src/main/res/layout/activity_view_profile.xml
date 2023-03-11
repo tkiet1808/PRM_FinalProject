@@ -49,6 +49,17 @@
 
             </LinearLayout>
 
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="35dp"
+                android:padding="10dp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:textColor="@color/teal_700"
+                android:text="My Profile" />
+
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="130dp"
