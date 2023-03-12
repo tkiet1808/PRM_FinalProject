@@ -49,10 +49,12 @@ public class DepositAdapter extends RecyclerView.Adapter<DepositAdapter.DepositV
         }
 
 
-        String amount = depositRequest.getAmount().toString();
+        String amount =
+//                "0";
+         depositRequest.getAmount().toString();
 
-        holder.createdDate.setText(date);
-        holder.amount.setText(amount);
+        holder.createdDate.setText("date");
+        holder.amount.setText("amount");
     }
 
     @Override

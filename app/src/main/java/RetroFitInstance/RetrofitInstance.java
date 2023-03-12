@@ -20,8 +20,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitInstance {
     private static Retrofit retrofit;
     private static Gson gson;
-    private static final String BASEURL = "https://10.0.2.2:8080/";
-
+    private static final String BASEURL = "https://10.0.3.2:8080/";
+//    https://jsonplaceholder.typicode.com/posts
     public static OkHttpClient.Builder getUnsafeOkHttpClient() {
 
         try {
