@@ -12,7 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.finalprojectprm.R;
 import com.example.finalprojectprm.ViewDepositHistoryActivity;
 
+import java.math.BigDecimal;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Queue;
 
 import Model.DepositRequest;
 
@@ -42,19 +48,22 @@ public class DepositAdapter extends RecyclerView.Adapter<DepositAdapter.DepositV
         if (depositRequest == null) {
             return;
         }
-        String[] dateString = depositRequest.getCreated().toString().split("");
-        String date = "";
-        for (int i = 0; i <= 18; i++) {
-            date += dateString[i];
+
+        Date date = new Date(depositRequest.getCreated());
+        String dateByFormat = "null";
+        if (date!= null){
+            dateByFormat = date.getDate() + "/" + (date.getMonth()+1) + "/"
+                    + (date.getYear()+1900) + " " + date.getHours() + ":" + date.getMinutes()
+                    + ":" + date.getSeconds();
         }
 
+        String amount = "null";
+        if (depositRequest.getAmount().compareTo(new BigDecimal("0.00")) == 1) {
+            amount = depositRequest.getAmount().toString();
+        }
 
-        String amount =
-//                "0";
-         depositRequest.getAmount().toString();
-
-        holder.createdDate.setText("date");
-        holder.amount.setText("amount");
+        holder.createdDate.setText(dateByFormat);
+        holder.amount.setText(amount);
     }
 
     @Override

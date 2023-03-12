@@ -89,8 +89,7 @@ public class ViewDepositHistoryActivity extends AppCompatActivity {
                         for (DepositRequest d : response.body()) {
                             list.add(d);
                         }
-                        Toast.makeText(ViewDepositHistoryActivity.this, list.toString(), Toast.LENGTH_SHORT).show();
-
+                        depositAdapter.notifyDataSetChanged();
                     } else {
                         Toast.makeText(ViewDepositHistoryActivity.this, "Fail!", Toast.LENGTH_SHORT).show();
                     }

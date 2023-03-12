@@ -93,6 +93,7 @@
                 android:id="@+id/rcvDeposit"
                 android:layout_marginTop="5dp"
                 android:layout_width="300dp"
+                android:minHeight="400dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"/>
         </LinearLayout>
