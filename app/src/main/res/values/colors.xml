@@ -12,4 +12,6 @@
     <color name="blue_500">#003566</color>
     <color name="blue_700">#001d3d</color>
     <color name="black_500">#001d3d</color>
+    <color name="hint_color">#8C8C8C</color>
+    <color name="selected_hint_color">#000000</color>
 </resources>
