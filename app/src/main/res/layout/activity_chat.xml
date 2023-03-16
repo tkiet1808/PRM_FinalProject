@@ -6,4 +6,210 @@
     android:layout_height="match_parent"
     tools:context=".ChatActivity">
 
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Top bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/backInChat"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                app:srcCompat="@drawable/ic_back"
+                android:layout_marginLeft="20dp"/>
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:scaleX="2.5"
+                android:scaleY="2.5"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal"
+                app:srcCompat="@mipmap/ic_logo_foreground" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:scaleY="1.5"
+                android:scaleX="1.5"
+                app:srcCompat="@drawable/ic_user"
+                android:layout_marginRight="20dp"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black_500"
+            android:layout_marginTop="20dp"/>
+
+
+
+        <!-- Chat messages -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:id="@+id/tvChat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corner"
+                android:layout_marginLeft="180dp"
+                android:layout_marginTop="13dp"
+
+                android:text="Alo alo cam xa mi ta"
+                android:padding="15dp"
+                android:paddingRight="50dp"
+                android:paddingLeft="50dp"/>
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                app:srcCompat="@drawable/user_chat_1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp">
+
+            <TextView
+                android:id="@+id/tvChat1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corner"
+                android:layout_marginLeft="77dp"
+                android:layout_marginTop="13dp"
+
+                android:text="Cho tôi 1 cây ram ship về Bình Thuận"
+                android:padding="15dp"
+                android:paddingRight="50dp"
+                android:paddingLeft="50dp"/>
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                app:srcCompat="@drawable/user_chat_1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp">
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                app:srcCompat="@drawable/ic_admin" />
+
+            <TextView
+                android:id="@+id/tvChat2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corner"
+                android:layout_marginTop="13dp"
+                android:text="Ok bố của Bình Thuận"
+                android:padding="15dp"
+                android:paddingRight="50dp"
+                android:paddingLeft="50dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            android:layout_marginTop="30dp">
+            <ImageView
+                android:id="@+id/imageView7"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                app:srcCompat="@drawable/ic_admin"
+                />
+
+            <TextView
+                android:id="@+id/tvChat3"
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corner"
+                android:layout_marginTop="13dp"
+                android:text="Ship về xưởng gỗ bự nhất Bình Thuận ạ?"
+                android:padding="15dp"
+                android:paddingRight="50dp"
+                android:paddingLeft="50dp"
+                />
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/chatList"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:dividerHeight="0dp"
+            android:padding="8dp"
+            android:stackFromBottom="true"
+            android:transcriptMode="alwaysScroll" />
+
+        <!-- Bottom bar -->
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:background="#EEEEEE"
+            android:gravity="center_vertical">
+
+            <!-- Text input field -->
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:id="@+id/chatTextInputLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:hintTextColor="@drawable/text_input_hint_selector"
+                app:boxStrokeColor="@color/yellow_500"
+                android:layout_marginEnd="8dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/chatTextInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:hint="Type here"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Send button -->
+            <Button
+                android:id="@+id/btn_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Send"
+                android:backgroundTint="#ffd60a"
+                android:textColor="@color/black_500"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
