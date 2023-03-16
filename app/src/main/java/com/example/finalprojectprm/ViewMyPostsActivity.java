@@ -1,58 +1,95 @@
 package com.example.finalprojectprm;
 
-import android.os.Bundle;
-import android.view.MenuItem;
-
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Bundle;
+import android.widget.Toast;
+
+import java.math.BigDecimal;
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
+
+
+//import APIServices.JsonPlaceHolder;
+
+//import RetroFitInstance.RetrofitInstance;
+//import retrofit2.Call;
+//import retrofit2.Callback;
+//import retrofit2.Response;
 
 public class ViewMyPostsActivity extends AppCompatActivity {
 
-//    private RecyclerView recyclerView;
-//    private MyPostAdapter myPostAdapter;
+    private RecyclerView rcvPost;
+    private PostAdapter postAdapter;
+//    private JsonPlaceHolder apiInterface;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.activity_view_my_posts);
+        rcvPost = findViewById(R.id.rcvPost);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        rcvPost.setLayoutManager(linearLayoutManager);
+
+        postAdapter = new PostAdapter(this);
+        postAdapter.setPostData(getListPost());
+        rcvPost.setAdapter(postAdapter);
+        postAdapter.notifyDataSetChanged();
+    }
+
+    //GetData API Function//
+    private List<PostRequest> getListPost() {
+        List<PostRequest> list = new ArrayList<>();
+//        apiInterface = RetrofitInstance.getRetrofit().create(JsonPlaceHolder.class);
+//        apiInterface.getListDeposit().enqueue(new Callback<List<DepositRequest>>() {
+//            @Override
+//            public void onResponse(Call<List<DepositRequest>> call, Response<List<DepositRequest>> response) {
+//                if (response.isSuccessful()) {
 //
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_view_my_posts);
+//                    if (response.body() != null) {
 //
-//        // Set up toolbar
-//        Toolbar toolbar = findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//                        for (DepositRequest d : response.body()) {
+//                            list.add(d);
+//                        }
+//                    } else {
+//                        Toast.makeText(ViewDepositHistoryActivity.this, "Fail!", Toast.LENGTH_SHORT).show();
+//                    }
+//                } else {
+//                    Toast.makeText(ViewDepositHistoryActivity.this, "Connect fail!", Toast.LENGTH_SHORT).show();
+//                }
+//            }
 //
-//        // Set up RecyclerView
-//        recyclerView = findViewById(R.id.recyclerView);
-//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//        recyclerView.setHasFixedSize(true);
-//        myPostAdapter = new MyPostAdapter(this);
-//        recyclerView.setAdapter(myPostAdapter);
 //
-//        // Load posts from database
-//        loadPosts();
-//    }
-//
-//    private void loadPosts() {
-//        // TODO: Load posts from database and pass them to myPostAdapter
-//        // Sample data
-//        ArrayList<MyPost> myPosts = new ArrayList<>();
-//        myPosts.add(new MyPost("Title 1", R.drawable.image1, "Description 1", "Condition 1", "Brand 1", "Warranty Status 1"));
-//        myPosts.add(new MyPost("Title 2", R.drawable.image2, "Description 2", "Condition 2", "Brand 2", "Warranty Status 2"));
-//        myPosts.add(new MyPost("Title 3", R.drawable.image3, "Description 3", "Condition 3", "Brand 3", "Warranty Status 3"));
-//        myPostAdapter.setMyPosts(myPosts);
-//    }
-//
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        int id = item.getItemId();
-//        if (id == android.R.id.home) {
-//            onBackPressed();
-//            return true;
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
+//            @Override
+//            public void onFailure(Call<List<DepositRequest>> call, Throwable t) {
+//                Toast.makeText(ViewDepositHistoryActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
+
+
+        PostRequest postRequest1 = new PostRequest(UUID.randomUUID(), "s", "//", "Good", new Timestamp(System.currentTimeMillis()), new Timestamp(System.currentTimeMillis()), new BigDecimal("500.00"), new BigDecimal("500.00"), 1);
+
+
+//        PostRequest postRequest1 = new PostRequest(UUID.randomUUID(), new Timestamp(System.currentTimeMillis()), new Timestamp(System.currentTimeMillis()), new BigDecimal("500.00"), 1);
+//        PostRequest postRequest2 = new PostRequest(UUID.randomUUID(), new Timestamp(System.currentTimeMillis()), new Timestamp(System.currentTimeMillis()), new BigDecimal("1000.00"), 2);
+//        PostRequest postRequest3 = new PostRequest(UUID.randomUUID(), new Timestamp(System.currentTimeMillis()), new Timestamp(System.currentTimeMillis()), new BigDecimal("250.50"), 3);
+//        PostRequest postRequest4 = new PostRequest(UUID.randomUUID(), new Timestamp(System.currentTimeMillis()), new Timestamp(System.currentTimeMillis()), new BigDecimal("750.75"), 2);
+//        PostRequest postRequest5 = new PostRequest(UUID.randomUUID(), new Timestamp(System.currentTimeMillis()), new Timestamp(System.currentTimeMillis()), new BigDecimal("1500.00"), 1);
+
+        list.add(postRequest1);
+//        list.add(postRequest2);
+//        list.add(postRequest3);
+//        list.add(postRequest4);
+//        list.add(postRequest5);
+
+
+        return list;
+    }
 }
