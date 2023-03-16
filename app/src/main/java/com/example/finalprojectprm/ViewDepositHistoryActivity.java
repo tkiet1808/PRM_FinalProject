@@ -4,19 +4,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
-import java.math.BigDecimal;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
-import APIServices.JsonPlaceHolder;
+import API_URL.JsonPlaceHolder;
 import Adapter.DepositAdapter;
 import Model.DepositRequest;
-import Model.testModels;
+import Model.MyApplication;
 import RetroFitInstance.RetrofitInstance;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -31,6 +31,9 @@ public class ViewDepositHistoryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // set
+        ((MyApplication) this.getApplication()).setUser_id("eb7cd244-61bc-47b8-8817-d82192bd21bb");
+
 
         setContentView(R.layout.activity_view_deposit_history);
         rcvDeposit = findViewById(R.id.rcvDeposit);
@@ -39,7 +42,7 @@ public class ViewDepositHistoryActivity extends AppCompatActivity {
         rcvDeposit.setLayoutManager(linearLayoutManager);
 
         depositAdapter = new DepositAdapter(this);
-        depositAdapter.setDepositData(getListDeposit("eb7cd244-61bc-47b8-8817-d82192bd21bb"));
+        depositAdapter.setDepositData(getListDeposit(((MyApplication)this.getApplication()).getUser_id()));
 
         rcvDeposit.setAdapter(depositAdapter);
         depositAdapter.notifyDataSetChanged();
@@ -120,4 +123,10 @@ public class ViewDepositHistoryActivity extends AppCompatActivity {
 //        Toast.makeText(ViewDepositHistoryActivity.this, list.toString(), Toast.LENGTH_SHORT).show();
         return list;
     }
+    public void profile_event(View v){
+        Toast.makeText(v.getContext(), "My Profile", Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(ViewDepositHistoryActivity.this,ViewProfileActivity.class);
+        startActivity(i);
+    }
+
 }
