@@ -28,6 +28,38 @@ public class EditProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_profile);
 
+        TextView fullname = findViewById(R.id.fullname);
+        TextView email = findViewById(R.id.email);
+        TextView phone = findViewById(R.id.phone);
+        TextView address = findViewById(R.id.address);
+        TextView balance = findViewById(R.id.moneyNumber);
+
+        Intent intent = getIntent();
+        if (intent.hasExtra("fullname")) {
+            if (!intent.getStringExtra("fullname").equals(""))
+                fullname.setText(intent.getStringExtra("fullname"));
+        } else
+            fullname.setText("");
+        if (intent.hasExtra("email")) {
+            if (!intent.getStringExtra("email").equals(""))
+                email.setText(intent.getStringExtra("email"));
+        } else
+            email.setText("");
+        if (intent.hasExtra("phone")) {
+            if (!intent.getStringExtra("phone").equals(""))
+                phone.setText(intent.getStringExtra("phone"));
+        } else
+            phone.setText("");
+        if (intent.hasExtra("address")) {
+            if (!intent.getStringExtra("address").equals(""))
+                address.setText(intent.getStringExtra("address"));
+        } else
+            address.setText("");
+        if (intent.hasExtra("balance")) {
+            if (!intent.getStringExtra("balance").equals(""))
+                balance.setText(intent.getStringExtra("balance"));
+        } else
+            balance.setText("0");
 
     }
 
@@ -41,7 +73,7 @@ public class EditProfileActivity extends AppCompatActivity {
                     if (response.body() != null) {
 
                         Toast.makeText(EditProfileActivity.this, "Edit Successfully!", Toast.LENGTH_SHORT).show();
-                        Intent i = new Intent(EditProfileActivity.this,ViewProfileActivity.class);
+                        Intent i = new Intent(EditProfileActivity.this, ViewProfileActivity.class);
                         startActivity(i);
 
                     } else {
@@ -59,19 +91,26 @@ public class EditProfileActivity extends AppCompatActivity {
             }
         });
     }
-    private void update_user_event(View view){
+
+    public void update_user_event(View view) {
         EditText fullname = findViewById(R.id.fullname);
         EditText email = findViewById(R.id.email);
         EditText phone = findViewById(R.id.phone);
         EditText address = findViewById(R.id.address);
 
         EditUserModel user = new EditUserModel();
-        user.setId((UUID.fromString(((MyApplication)this.getApplication()).getUser_id())));
+        user.setId((UUID.fromString(((MyApplication) this.getApplication()).getUser_id())));
         user.setName(fullname.getText().toString());
         user.setEmail(email.getText().toString());
         user.setPhone(phone.getText().toString());
         user.setAddress(address.getText().toString());
-
+//        Toast.makeText(EditProfileActivity.this, user.toString(), Toast.LENGTH_SHORT).show();
         updateUser(user);
     }
+    public void cancel_event(View view){
+        Toast.makeText(EditProfileActivity.this, "Cancel!", Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(EditProfileActivity.this, ViewProfileActivity.class);
+        startActivity(i);
+    }
+
 }

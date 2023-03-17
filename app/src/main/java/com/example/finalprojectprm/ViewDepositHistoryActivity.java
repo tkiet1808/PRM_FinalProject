@@ -31,8 +31,8 @@ public class ViewDepositHistoryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // set
-        ((MyApplication) this.getApplication()).setUser_id("eb7cd244-61bc-47b8-8817-d82192bd21bb");
+//        // set
+//        ((MyApplication) this.getApplication()).setUser_id("eb7cd244-61bc-47b8-8817-d82192bd21bb");
 
 
         setContentView(R.layout.activity_view_deposit_history);

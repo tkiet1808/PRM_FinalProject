@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewDepositHistoryActivity">
+    tools:context=".DepositActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -42,10 +42,37 @@
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
+                    android:onClick="profile_event"
+                    android:clickable="true"
                     android:scaleX="0.8"
                     android:scaleY="0.8"
                     app:srcCompat="@drawable/ic_baseline_account_circle_24" />
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/view_his_dep_button"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:onClick="view_dep_his_event"
+                    android:layout_marginLeft="20dp"
+                    android:backgroundTint="@color/teal_200"
+                    android:text="View deposit history"
+                    android:textColor="@color/black_500" />
+
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/arrow_next_right_icon" />
             </LinearLayout>
 
             <TextView
