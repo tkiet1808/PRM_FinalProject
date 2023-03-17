@@ -19,7 +19,7 @@
         android:textSize="15dp" />
 
     <TextView
-        android:id="@+id/amount_field"
+        android:id="@+id/price_field"
         android:layout_width="120dp"
         android:layout_height="30dp"
         android:gravity="center"

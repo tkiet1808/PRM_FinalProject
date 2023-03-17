@@ -83,13 +83,14 @@
 
                 <HorizontalScrollView
                     android:layout_width="150dp"
+
                     android:layout_height="match_parent">
 
-                    <EditText
+                    <TextView
                         android:id="@+id/moneyNumber"
                         android:layout_width="150dp"
                         android:layout_height="match_parent"
-
+                        android:minWidth="150dp"
                         android:layout_weight="1"
                         android:alpha="0.8"
                         android:background="@drawable/money_color"
@@ -212,6 +213,7 @@
                     android:layout_marginTop="10dp"
                     android:backgroundTint="#F44336"
                     android:text="Cancel"
+                    android:onClick="cancel_event"
                     android:textColor="@color/black_500"
                     android:textSize="20dp" />
 

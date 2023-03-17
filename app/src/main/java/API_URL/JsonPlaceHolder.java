@@ -4,12 +4,16 @@ import java.util.List;
 
 import Model.DepositRequest;
 import Model.EditUserModel;
+import Model.LoginRequest;
+import Model.RegisterRequest;
+import Model.StatusResponse;
 import Model.User;
 import Model.testModels;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Path;
 
 public interface JsonPlaceHolder {
@@ -25,9 +29,11 @@ public interface JsonPlaceHolder {
     @GET("users/{id}")
     Call<User> getUser(@Path(value = "id")String id);
     @POST("users/create")
-    Call<User> createUser(@Body User user);
-    @POST("users/update")
+    Call<StatusResponse> register(@Body RegisterRequest registerForm);
+    @PUT("users/update")
     Call<User> updateUser(@Body EditUserModel user);
+    @POST("users/login")
+    Call<StatusResponse> login(@Body LoginRequest loginForm);
 
     //post url
 

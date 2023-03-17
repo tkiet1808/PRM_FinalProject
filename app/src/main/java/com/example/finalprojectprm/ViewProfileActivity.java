@@ -25,29 +25,35 @@ import retrofit2.Response;
 
 public class ViewProfileActivity extends AppCompatActivity {
     private JsonPlaceHolder apiInterface;
-private User resUser;
+    private User resUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_profile);
+//        // set
+//        ((MyApplication) this.getApplication()).setUser_id("eb7cd244-61bc-47b8-8817-d82192bd21bb");
 
-        getUser(((MyApplication)this.getApplication()).getUser_id());
+        getUser(((MyApplication) this.getApplication()).getUser_id());
 
         Button editPf = findViewById(R.id.edit_profile_button);
-        editPf.setOnClickListener( new View.OnClickListener(){
+        editPf.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(v.getContext(), "Edit Profile", Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(ViewProfileActivity.this,EditProfileActivity.class);
+                Intent i = new Intent(ViewProfileActivity.this, EditProfileActivity.class);
+
                 i.putExtra("fullname", resUser.getName());
                 i.putExtra("email", resUser.getEmail());
                 i.putExtra("phone", resUser.getPhone());
                 i.putExtra("address", resUser.getAddress());
+                if (resUser.getBalance()!=null)
+                i.putExtra("balance", resUser.getBalance());
                 startActivity(i);
             }
         });
     }
+
     private void getUser(String user_id) {
         apiInterface = RetrofitInstance.getRetrofit().create(JsonPlaceHolder.class);
         apiInterface.getUser(user_id).enqueue(new Callback<User>() {
@@ -69,7 +75,7 @@ private User resUser;
                         email.setText(resUser.getEmail());
                         phone.setText(resUser.getPhone());
                         address.setText(resUser.getAddress());
-                        if (resUser.getBalance()!=null){
+                        if (resUser.getBalance() != null) {
                             balance.setText(resUser.getBalance().toString());
                         } else {
                             balance.setText("0");
