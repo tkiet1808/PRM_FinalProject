@@ -75,6 +75,33 @@
                     app:srcCompat="@drawable/arrow_next_right_icon" />
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/textView9"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:textColorHint="@color/black_500"
+                    android:hint="Enter deposit amount" />
+
+                <Button
+                    android:id="@+id/dep_momo__button"
+                    android:layout_width="150dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="#DB3274"
+                    android:onClick="view_dep_his_event"
+                    android:text="Move TO MOMO"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
             <TextView
                 android:id="@+id/textView7"
                 android:layout_width="wrap_content"

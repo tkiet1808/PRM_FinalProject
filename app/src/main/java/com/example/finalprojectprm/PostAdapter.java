@@ -61,7 +61,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         public PostViewHolder(@NonNull View itemView) {
             super(itemView);
             createdDate = itemView.findViewById(R.id.createdDate_field);
-            price = itemView.findViewById(R.id.price_field);
+            price = itemView.findViewById(R.id.amount_field);
         }
     }
 }
