@@ -98,9 +98,17 @@ public class ViewProfileActivity extends AppCompatActivity {
     }
 
 
+
+
+
     public void logout_event(View view) {
         Toast.makeText(ViewProfileActivity.this, "Logout!", Toast.LENGTH_SHORT).show();
         Intent i = new Intent(ViewProfileActivity.this, LoginActivity.class);
+        startActivity(i);
+    }
+    public void backToHome_event(View view) {
+        Toast.makeText(ViewProfileActivity.this, "Back to home!", Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(ViewProfileActivity.this, HomeActivity.class);
         startActivity(i);
     }
 }

@@ -36,17 +36,17 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
         if (postRequest == null) {
             return;
         }
-        String[] dateString = postRequest.getCreated().toString().split("");
-        String date = "";
-        for (int i = 0; i <= 18; i++) {
-            date += dateString[i];
-        }
+//        String[] dateString = postRequest.getCreated().toString().split("");
+//        String date = "";
+//        for (int i = 0; i <= 18; i++) {
+//            date += dateString[i];
+//        }
 
 
-        String price = postRequest.getPrice().toString();
+//        String price = postRequest.getPrice().toString();
 
-        holder.createdDate.setText(date);
-        holder.price.setText(price);
+//        holder.createdDate.setText("date");
+//        holder.price.setText("price");
     }
 
     @Override

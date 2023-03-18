@@ -218,25 +218,26 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:id="@+id/textInputLayout5"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="32dp"
                 android:layout_marginRight="32dp"
-                app:boxBackgroundColor="#f8f9fa"
-                app:boxStrokeColor="@color/yellow_500"
-                app:errorEnabled="true"
-                app:hintTextColor="@drawable/text_input_hint_selector"
                 android:hint="Password"
                 android:text="Password"
                 android:textSize="24dp"
-                app:endIconMode="password_toggle">
+                app:boxBackgroundColor="#f8f9fa"
+                app:boxStrokeColor="@color/yellow_500"
+                app:endIconMode="password_toggle"
+                app:errorEnabled="true"
+                app:hintTextColor="@drawable/text_input_hint_selector">
+
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword"/>
+                    android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
@@ -279,21 +280,7 @@
                 >
 
 
-                <Button
-                    android:id="@+id/login_with_gmail_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:drawableLeft="@drawable/google_icon"
-                    android:text="Login with Gmail"
-                    android:textAlignment="viewEnd"
-                    android:textSize="12dp"
-                    android:layout_marginRight="5dp"
-                    android:textColor="@color/black_500"
-                    app:backgroundTint="@android:color/transparent"
-                    app:strokeColor="@color/black_500"
-                    app:strokeWidth="2dp"
-                    />
+
 
                 <!-- Login with Phone button -->
                 <Button

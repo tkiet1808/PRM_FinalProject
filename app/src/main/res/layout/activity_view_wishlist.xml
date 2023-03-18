@@ -29,7 +29,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-
+                    android:onClick="backToHome_event"
                     android:scaleX="1.2"
                     android:scaleY="1.2"
                     app:srcCompat="@mipmap/ic_logo_foreground" />
@@ -38,12 +38,14 @@
                     android:id="@+id/blank"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+
                     android:layout_weight="1" />
 
                 <ImageView
                     android:id="@+id/profile_icon"
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
+                    android:onClick="viewProfile_event"
                     android:layout_gravity="right"
                     android:scaleX="0.8"
                     android:scaleY="0.8"
@@ -57,6 +59,7 @@
                 android:layout_marginHorizontal="30dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 android:layout_weight="1" />
 
         </LinearLayout>

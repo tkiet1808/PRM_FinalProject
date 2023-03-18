@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import java.math.BigDecimal;
@@ -40,8 +42,8 @@ public class ViewMyPostsActivity extends AppCompatActivity {
 
         postAdapter = new PostAdapter(this);
         postAdapter.setPostData(getListPost());
-        rcvPost.setAdapter(postAdapter);
-        postAdapter.notifyDataSetChanged();
+//        rcvPost.setAdapter(postAdapter);
+//        postAdapter.notifyDataSetChanged();
     }
 
     //GetData API Function//
@@ -91,5 +93,20 @@ public class ViewMyPostsActivity extends AppCompatActivity {
 
 
         return list;
+    }
+    public void createPost_event(View view) {
+        Toast.makeText(ViewMyPostsActivity.this, "Create Post!", Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(ViewMyPostsActivity.this, CreatePostActivity.class);
+        startActivity(i);
+    }
+    public void detailPost_event(View view) {
+        Toast.makeText(ViewMyPostsActivity.this, "Create Post!", Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(ViewMyPostsActivity.this, ViewPostDetailsActivity.class);
+        startActivity(i);
+    }
+    public void backToProfile_event(View view) {
+        Toast.makeText(ViewMyPostsActivity.this, "Create Post!", Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(ViewMyPostsActivity.this, ViewProfileActivity.class);
+        startActivity(i);
     }
 }

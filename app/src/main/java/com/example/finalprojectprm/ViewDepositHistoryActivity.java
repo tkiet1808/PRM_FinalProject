@@ -128,5 +128,15 @@ public class ViewDepositHistoryActivity extends AppCompatActivity {
         Intent i = new Intent(ViewDepositHistoryActivity.this,ViewProfileActivity.class);
         startActivity(i);
     }
+    public void backToHome_event(View v){
+        Toast.makeText(v.getContext(), "back to home!", Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(ViewDepositHistoryActivity.this,HomeActivity.class);
+        startActivity(i);
+    }
+    public void viewProfile_event(View v){
+        Toast.makeText(v.getContext(), "View Profile", Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(ViewDepositHistoryActivity.this,ViewProfileActivity.class);
+        startActivity(i);
+    }
 
 }

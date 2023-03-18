@@ -27,7 +27,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
-
+                    android:onClick="backToHome_event"
                     android:scaleX="1.2"
                     android:scaleY="1.2"
                     app:srcCompat="@mipmap/ic_logo_foreground" />
@@ -196,14 +196,46 @@
                 android:text="2xx/x Wall Street, District 9"
                 android:textSize="30dp" />
 
-            <Button
-                android:id="@+id/edit_profile_button"
-                android:layout_width="150dp"
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="10dp"
-                android:backgroundTint="@color/blue_500"
-                android:text="Edit Profile" />
+                android:orientation="horizontal"
+                android:gravity="center"
+                >
+                <Button
+                    android:id="@+id/edit_profile_button"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="@color/blue_500"
+                    android:text="Edit Profile"
+
+                    />
+                <Button
+                    android:id="@+id/edit_profile_button1"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="@color/blue_500"
+                    android:text="My Post"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    />
+                <Button
+                    android:id="@+id/edit_profile_button2"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="@color/blue_500"
+                    android:text="Deposit"
+                    />
+            </LinearLayout>
+
+
 
             <Button
                 android:id="@+id/logout_button"

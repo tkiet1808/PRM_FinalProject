@@ -47,7 +47,7 @@ public class RegisterActivity extends AppCompatActivity {
         if (!phone.getText().equals("") && !password.getText().equals("")
                 &&!name.getText().equals("") && !address.getText().equals("")
                 &&!email.getText().equals("") && !confirm_password.getText().equals("")) {
-            if (confirm_password.getText().equals(password.getText()))
+            if (!confirm_password.getText().equals(password.getText()))
             register(new RegisterRequest(name.getText().toString(),address.getText().toString()
                     ,phone.getText().toString(),email.getText().toString()
                     ,password.getText().toString(),confirm_password.getText().toString()));

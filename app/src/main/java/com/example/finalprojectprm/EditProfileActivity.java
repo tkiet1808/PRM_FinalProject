@@ -113,4 +113,15 @@ public class EditProfileActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void backToHome_event(View view){
+        Toast.makeText(EditProfileActivity.this, "Back to home!", Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(EditProfileActivity.this, HomeActivity.class);
+        startActivity(i);
+    }
+    public void viewProfile_event(View view){
+        Toast.makeText(EditProfileActivity.this, "Back to home!", Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(EditProfileActivity.this, ViewProfileActivity.class);
+        startActivity(i);
+    }
+
 }

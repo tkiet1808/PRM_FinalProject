@@ -50,22 +50,14 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        googleBtn = findViewById(R.id.login_with_gmail_button);
 
-        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
-        gsc = GoogleSignIn.getClient(this,gso);
-
-        GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
-        if(acct != null){
-            navigateToSecondActivity();
-        }
-
-        googleBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                signIn();
-            }
-        });
+//        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
+//        gsc = GoogleSignIn.getClient(this,gso);
+//
+//        GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
+//        if(acct != null){
+//            navigateToSecondActivity();
+//        }
 
 //        Intent intent = getIntent();
 //        if (intent.hasExtra("registerSuccess")) {
@@ -78,32 +70,15 @@ public class LoginActivity extends AppCompatActivity {
         startActivityForResult(signInIntent, 1000);
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == 1000){
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
-
-            try {
-                task.getResult(ApiException.class);
-                navigateToSecondActivity();
-            } catch (ApiException e) {
-                Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
-
-    void navigateToSecondActivity(){
-        finish();
-        Intent intent = new Intent(LoginActivity.this, SecondLoginActivity.class);
-        startActivity(intent);
-    }
 
     public void login_event(View view){
         TextInputEditText phone = findViewById(R.id.phone_number);
         TextInputEditText password = findViewById(R.id.password);
         if (!phone.getText().equals("")&&!password.getText().equals("")){
-            loginUser(new LoginRequest(phone.getText().toString(),password.getText().toString()));
+//            loginUser(new LoginRequest(phone.getText().toString(),password.getText().toString()));
+            Toast.makeText(LoginActivity.this, "Login Successfully!", Toast.LENGTH_SHORT).show();
+            Intent i = new Intent(LoginActivity.this, HomeActivity.class);
+            startActivity(i);
         } else Toast.makeText(LoginActivity.this, "Please fill in data!", Toast.LENGTH_SHORT).show();
     }
 
@@ -121,7 +96,7 @@ public class LoginActivity extends AppCompatActivity {
                             // set
                             ((MyApplication)getApplication()).setUser_id("???");
                             Toast.makeText(LoginActivity.this, "Login Successfully!", Toast.LENGTH_SHORT).show();
-                            Intent i = new Intent(LoginActivity.this, ListPostActivity.class);
+                            Intent i = new Intent(LoginActivity.this, HomeActivity.class);
                             startActivity(i);
                         } else
                             Toast.makeText(LoginActivity.this, "Login Fail!", Toast.LENGTH_SHORT).show();
