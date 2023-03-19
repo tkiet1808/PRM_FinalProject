@@ -6,7 +6,6 @@ import Model.DepositRequest;
 import Model.EditUserModel;
 import Model.LoginRequest;
 import Model.RegisterRequest;
-import Model.StatusResponse;
 import Model.User;
 import Model.testModels;
 import retrofit2.Call;
@@ -29,11 +28,11 @@ public interface JsonPlaceHolder {
     @GET("users/{id}")
     Call<User> getUser(@Path(value = "id")String id);
     @POST("users/create")
-    Call<StatusResponse> register(@Body RegisterRequest registerForm);
+    Call<User> register(@Body RegisterRequest registerForm);
     @PUT("users/update")
     Call<User> updateUser(@Body EditUserModel user);
     @POST("users/login")
-    Call<StatusResponse> login(@Body LoginRequest loginForm);
+    Call<User> login(@Body LoginRequest loginForm);
 
     //post url
 

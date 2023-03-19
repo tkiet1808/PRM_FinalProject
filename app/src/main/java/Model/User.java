@@ -28,6 +28,7 @@ public class User {
     private String external_login_id;
     private String error;
     private int status;
+    private String message;
 //    private List<Post> posts;
 //    private List<Wish> wishlist;
 //    private List<DepositRequest> depositRequests;

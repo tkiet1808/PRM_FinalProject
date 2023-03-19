@@ -13,7 +13,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import API_URL.JsonPlaceHolder;
 import Model.MyApplication;
 import Model.RegisterRequest;
-import Model.StatusResponse;
+import Model.User;
 import RetroFitInstance.RetrofitInstance;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -44,10 +44,10 @@ public class RegisterActivity extends AppCompatActivity {
         TextInputEditText email = findViewById(R.id.email);
         TextInputEditText confirm_password = findViewById(R.id.confirm_password);
 
-        if (!phone.getText().equals("") && !password.getText().equals("")
-                &&!name.getText().equals("") && !address.getText().equals("")
-                &&!email.getText().equals("") && !confirm_password.getText().equals("")) {
-            if (!confirm_password.getText().equals(password.getText()))
+        if (!phone.getText().toString().equals("") && !password.getText().toString().equals("")
+                &&!name.getText().toString().equals("") && !address.getText().toString().equals("")
+                &&!email.getText().toString().equals("") && !confirm_password.getText().toString().equals("")) {
+            if (confirm_password.getText().toString().equals(password.getText().toString()))
             register(new RegisterRequest(name.getText().toString(),address.getText().toString()
                     ,phone.getText().toString(),email.getText().toString()
                     ,password.getText().toString(),confirm_password.getText().toString()));
@@ -57,17 +57,17 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void register(RegisterRequest registerRequest) {
         apiInterface = RetrofitInstance.getRetrofit().create(JsonPlaceHolder.class);
-        apiInterface.register(registerRequest).enqueue(new Callback<StatusResponse>() {
+        apiInterface.register(registerRequest).enqueue(new Callback<User>() {
             @Override
-            public void onResponse(Call<StatusResponse> call, Response<StatusResponse> response) {
+            public void onResponse(Call<User> call, Response<User> response) {
                 if (response.isSuccessful()) {
 
                     if (response.body() != null) {
-                        StatusResponse loginResponse = response.body();
-                        if (loginResponse.getStatus()==0){
+                        User registerResponse = response.body();
+                        if (registerResponse.getStatus()==0){
                             Toast.makeText(RegisterActivity.this, "Register Successfully!", Toast.LENGTH_SHORT).show();
-                            Intent i = new Intent(RegisterActivity.this, LoginActivity.class);
-                            i.putExtra("registerSuccess","registerSuccess");
+                            ((MyApplication)getApplication()).setUser_id(registerResponse.getId().toString());
+                            Intent i = new Intent(RegisterActivity.this, HomeActivity.class);
                             startActivity(i);
                         } else
                             Toast.makeText(RegisterActivity.this, "Register Fail!", Toast.LENGTH_SHORT).show();
@@ -83,7 +83,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
             @Override
-            public void onFailure(Call<StatusResponse> call, Throwable t) {
+            public void onFailure(Call<User> call, Throwable t) {
                 Toast.makeText(RegisterActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });

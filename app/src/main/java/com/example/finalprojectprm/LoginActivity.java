@@ -1,6 +1,5 @@
 package com.example.finalprojectprm;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,19 +9,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.ApiException;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 
 import API_URL.JsonPlaceHolder;
-import Model.EditUserModel;
 import Model.LoginRequest;
 import Model.MyApplication;
-import Model.StatusResponse;
 import Model.User;
 import RetroFitInstance.RetrofitInstance;
 import retrofit2.Call;
@@ -74,27 +67,28 @@ public class LoginActivity extends AppCompatActivity {
     public void login_event(View view){
         TextInputEditText phone = findViewById(R.id.phone_number);
         TextInputEditText password = findViewById(R.id.password);
-        if (!phone.getText().equals("")&&!password.getText().equals("")){
-//            loginUser(new LoginRequest(phone.getText().toString(),password.getText().toString()));
-            Toast.makeText(LoginActivity.this, "Login Successfully!", Toast.LENGTH_SHORT).show();
-            Intent i = new Intent(LoginActivity.this, HomeActivity.class);
-            startActivity(i);
+        Toast.makeText(LoginActivity.this, phone.getText().toString()+"////"+password.getText().toString(), Toast.LENGTH_SHORT).show();
+        if (!phone.getText().toString().equals("")&&!password.getText().toString().equals("")){
+            loginUser(new LoginRequest(phone.getText().toString(),password.getText().toString()));
+//            Toast.makeText(LoginActivity.this, "Login Successfully!", Toast.LENGTH_SHORT).show();
+//            Intent i = new Intent(LoginActivity.this, HomeActivity.class);
+//            startActivity(i);
         } else Toast.makeText(LoginActivity.this, "Please fill in data!", Toast.LENGTH_SHORT).show();
     }
 
     private void loginUser(LoginRequest loginRequest) {
         apiInterface = RetrofitInstance.getRetrofit().create(JsonPlaceHolder.class);
-        apiInterface.login(loginRequest).enqueue(new Callback<StatusResponse>() {
+        apiInterface.login(loginRequest).enqueue(new Callback<User>() {
             @Override
-            public void onResponse(Call<StatusResponse> call, Response<StatusResponse> response) {
+            public void onResponse(Call<User> call, Response<User> response) {
                 if (response.isSuccessful()) {
 
                     if (response.body() != null) {
-                        StatusResponse loginResponse = response.body();
+                        User loginResponse = response.body();
                         if (loginResponse.getStatus()==0){
                             Toast.makeText(LoginActivity.this, "Login Successfully!", Toast.LENGTH_SHORT).show();
                             // set
-                            ((MyApplication)getApplication()).setUser_id("???");
+                            ((MyApplication)getApplication()).setUser_id(loginResponse.getId().toString());
                             Toast.makeText(LoginActivity.this, "Login Successfully!", Toast.LENGTH_SHORT).show();
                             Intent i = new Intent(LoginActivity.this, HomeActivity.class);
                             startActivity(i);
@@ -112,7 +106,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
             @Override
-            public void onFailure(Call<StatusResponse> call, Throwable t) {
+            public void onFailure(Call<User> call, Throwable t) {
                 Toast.makeText(LoginActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
