@@ -8,11 +8,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
-
-import Model.MyApplication;
 
 public class DepositActivity extends AppCompatActivity {
 
@@ -20,9 +17,6 @@ public class DepositActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deposit);
-
-//        // set
-//        ((MyApplication) this.getApplication()).setUser_id("eb7cd244-61bc-47b8-8817-d82192bd21bb");
 
         ImageView copyImage = findViewById(R.id.copy_icon);
         copyImage.setOnClickListener(new View.OnClickListener() {

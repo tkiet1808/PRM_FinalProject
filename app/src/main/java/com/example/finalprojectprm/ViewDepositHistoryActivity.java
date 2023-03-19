@@ -31,10 +31,6 @@ public class ViewDepositHistoryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        // set
-//        ((MyApplication) this.getApplication()).setUser_id("eb7cd244-61bc-47b8-8817-d82192bd21bb");
-
-
         setContentView(R.layout.activity_view_deposit_history);
         rcvDeposit = findViewById(R.id.rcvDeposit);
 
@@ -46,36 +42,6 @@ public class ViewDepositHistoryActivity extends AppCompatActivity {
 
         rcvDeposit.setAdapter(depositAdapter);
         depositAdapter.notifyDataSetChanged();
-
-//        List<testModels> list = new ArrayList<>();
-//        apiInterface = RetrofitInstance.getRetrofit().create(JsonPlaceHolder.class);
-//        apiInterface.getPosts().enqueue(new Callback<List<testModels>>() {
-//            @Override
-//            public void onResponse(Call<List<testModels>> call, Response<List<testModels>> response) {
-//                if (response.isSuccessful()) {
-//
-//                    if (response.body() != null) {
-//
-//                        for (testModels d : response.body()) {
-//                            list.add(d);
-//                        }
-//                        Toast.makeText(ViewDepositHistoryActivity.this, "lay duoc r "+list.size(), Toast.LENGTH_SHORT).show();
-//                    } else {
-//                        Toast.makeText(ViewDepositHistoryActivity.this, "Fail!", Toast.LENGTH_SHORT).show();
-//                    }
-//                } else {
-//                    Toast.makeText(ViewDepositHistoryActivity.this, "Connect fail!", Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//
-//
-//            @Override
-//            public void onFailure(Call<List<testModels>> call, Throwable t) {
-//                Toast.makeText(ViewDepositHistoryActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
-//            }
-//        });
-
-
     }
 
     //GetData API Function//
@@ -107,20 +73,6 @@ public class ViewDepositHistoryActivity extends AppCompatActivity {
                 Toast.makeText(ViewDepositHistoryActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
-
-//        DepositRequest depositRequest1 = new DepositRequest(UUID.randomUUID(),UUID.randomUUID(), new BigDecimal("500.00"), System.currentTimeMillis(), System.currentTimeMillis(), 1);
-//        DepositRequest depositRequest2 = new DepositRequest(UUID.randomUUID(),UUID.randomUUID(), new BigDecimal("400.00"), System.currentTimeMillis(), System.currentTimeMillis(), 1);
-//        DepositRequest depositRequest3 = new DepositRequest(UUID.randomUUID(),UUID.randomUUID(), new BigDecimal("500.00"), System.currentTimeMillis(), System.currentTimeMillis(), 1);
-//        DepositRequest depositRequest4 = new DepositRequest(UUID.randomUUID(), new Timestamp(System.currentTimeMillis()), new Timestamp(System.currentTimeMillis()), new BigDecimal("750.75"), 2);
-//        DepositRequest depositRequest5 = new DepositRequest(UUID.randomUUID(), new Timestamp(System.currentTimeMillis()), new Timestamp(System.currentTimeMillis()), new BigDecimal("1500.00"), 1);
-
-//        list.add(depositRequest1);
-//        list.add(depositRequest2);
-//        list.add(depositRequest3);
-//        list.add(depositRequest4);
-//        list.add(depositRequest5);
-
-//        Toast.makeText(ViewDepositHistoryActivity.this, list.toString(), Toast.LENGTH_SHORT).show();
         return list;
     }
     public void profile_event(View v){
