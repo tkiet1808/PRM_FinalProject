@@ -208,7 +208,7 @@
                 app:errorEnabled="true"
                 app:counterMaxLength="15"
                 app:hintTextColor="@drawable/text_input_hint_selector"
-                android:hint="Email"
+                android:hint="Phone"
                 >
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/phone_number"
@@ -259,6 +259,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:layout_marginTop="10dp"
+                android:visibility="gone"
                 android:text="Forgot password? Click here"
                 android:textSize="16dp" />
 
@@ -268,6 +269,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="Or Use"
+                android:visibility="gone"
                 android:textSize="16dp"
                 android:layout_marginTop="20dp"/>
 
@@ -297,7 +299,7 @@
                     app:backgroundTint="@android:color/transparent"
                     app:strokeColor="@color/black_500"
                     app:strokeWidth="2dp"
-
+android:visibility="gone"
                     />
 
             </LinearLayout>
