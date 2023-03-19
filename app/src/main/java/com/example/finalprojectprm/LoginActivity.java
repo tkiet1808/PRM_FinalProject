@@ -67,7 +67,6 @@ public class LoginActivity extends AppCompatActivity {
     public void login_event(View view){
         TextInputEditText phone = findViewById(R.id.phone_number);
         TextInputEditText password = findViewById(R.id.password);
-        Toast.makeText(LoginActivity.this, phone.getText().toString()+"////"+password.getText().toString(), Toast.LENGTH_SHORT).show();
         if (!phone.getText().toString().equals("")&&!password.getText().toString().equals("")){
             loginUser(new LoginRequest(phone.getText().toString(),password.getText().toString()));
 //            Toast.makeText(LoginActivity.this, "Login Successfully!", Toast.LENGTH_SHORT).show();
@@ -86,7 +85,6 @@ public class LoginActivity extends AppCompatActivity {
                     if (response.body() != null) {
                         User loginResponse = response.body();
                         if (loginResponse.getStatus()==0){
-                            Toast.makeText(LoginActivity.this, "Login Successfully!", Toast.LENGTH_SHORT).show();
                             // set
                             ((MyApplication)getApplication()).setUser_id(loginResponse.getId().toString());
                             Toast.makeText(LoginActivity.this, "Login Successfully!", Toast.LENGTH_SHORT).show();
