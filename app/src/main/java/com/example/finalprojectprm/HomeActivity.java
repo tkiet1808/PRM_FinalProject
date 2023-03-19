@@ -22,7 +22,7 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(i);
     }
     public void WishList_event(View view){
-        Toast.makeText( HomeActivity.this, "View Profile", Toast.LENGTH_SHORT).show();
+        Toast.makeText( HomeActivity.this, "Wishlist", Toast.LENGTH_SHORT).show();
         Intent i = new Intent(HomeActivity.this, ViewWishlistActivity.class);
         startActivity(i);
     }

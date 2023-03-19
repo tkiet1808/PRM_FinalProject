@@ -42,10 +42,14 @@ public class ViewProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(v.getContext(), "Edit Profile", Toast.LENGTH_SHORT).show();
                 Intent i = new Intent(ViewProfileActivity.this, EditProfileActivity.class);
-
+                i.putExtra("id", resUser.getId());
+                if (resUser.getName()!=null)
                 i.putExtra("fullname", resUser.getName());
+                if (resUser.getEmail()!=null)
                 i.putExtra("email", resUser.getEmail());
+                if (resUser.getPhone()!=null)
                 i.putExtra("phone", resUser.getPhone());
+                if (resUser.getAddress()!=null)
                 i.putExtra("address", resUser.getAddress());
                 if (resUser.getBalance()!=null)
                 i.putExtra("balance", resUser.getBalance());
