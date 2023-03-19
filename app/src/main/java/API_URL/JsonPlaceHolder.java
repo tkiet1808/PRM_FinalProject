@@ -1,12 +1,17 @@
 package API_URL;
 
+import com.example.finalprojectprm.PostRequest;
+
 import java.util.List;
 
 import Model.DepositRequest;
 import Model.EditUserModel;
 import Model.LoginRequest;
+import Model.Post;
+import Model.PostList;
 import Model.RegisterRequest;
 import Model.User;
+import Model.Wish;
 import Model.testModels;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -17,8 +22,8 @@ import retrofit2.http.Path;
 
 public interface JsonPlaceHolder {
     //test thoi dung xai
-    @GET("posts")
-    Call<List<testModels>> getPosts();
+//    @GET("posts")
+//    Call<List<testModels>> getPosts();
 
     //deposit url
     @GET("deposits/{id}")
@@ -35,9 +40,16 @@ public interface JsonPlaceHolder {
     Call<User> login(@Body LoginRequest loginForm);
 
     //post url
-
+    @GET("posts")
+    Call<List<PostList>> getListPost();
+    @GET("posts/{id}")
+    Call<List<PostList>> getMyPost(@Path(value = "id")String id);
+    @GET("posts/details/{id}")
+    Call<Post> getPostDetails(@Path(value = "id")String id);
+    @POST("posts/")
 
     //wish url
-
+    @GET("wishes/{id}")
+    Call<List<Wish>> getWishList(@Path(value = "id")String id);
 
 }

@@ -221,6 +221,7 @@
                     android:layout_marginTop="10dp"
                     android:backgroundTint="@color/blue_500"
                     android:text="My Post"
+                    android:onClick="myPost_event"
                     android:layout_marginRight="20dp"
                     android:layout_marginLeft="20dp"
                     />
@@ -229,6 +230,7 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:onClick="deposit_event"
                     android:layout_marginTop="10dp"
                     android:backgroundTint="@color/blue_500"
                     android:text="Deposit"

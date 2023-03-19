@@ -115,4 +115,15 @@ public class ViewProfileActivity extends AppCompatActivity {
         Intent i = new Intent(ViewProfileActivity.this, HomeActivity.class);
         startActivity(i);
     }
+    public void myPost_event(View view){
+        Toast.makeText(ViewProfileActivity.this, "My Post!", Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(ViewProfileActivity.this, ViewMyPostsActivity.class);
+        startActivity(i);
+    }
+
+    public void deposit_event(View view) {
+        Toast.makeText(ViewProfileActivity.this, "Deposit Page!", Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(ViewProfileActivity.this, DepositActivity.class);
+        startActivity(i);
+    }
 }

@@ -17,6 +17,7 @@ public class PostList {
     private UUID id;
     private String name;
     private String image;
+    private String description;
     private BigDecimal price;
     private List<Tag> tags;
 }
