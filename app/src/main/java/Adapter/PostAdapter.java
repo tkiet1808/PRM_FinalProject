@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.finalprojectprm.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -45,7 +46,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
             return;
         }
 
-        holder.itemPostImage.setImageURI(Uri.parse(post.getImage()));
+        Picasso.get().load(post.getImage()).placeholder(R.drawable.noimage).error(R.drawable.noimage).into(holder.itemPostImage);
+
         holder.itemPostName.setText(post.getName());
         holder.button.setText(post.getPrice().toString());
     }
@@ -58,6 +60,13 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
     public class PostViewHolder extends RecyclerView.ViewHolder {
         public TextView itemPostName;
         public ImageView itemPostImage;
+        public TextView tagT1;
+        public TextView tagV1;
+        public TextView tagT2;
+        public TextView tagV2;
+        public TextView tagT3;
+        public TextView tagV3;
+
         public Button button;
 
         public PostViewHolder(@NonNull View itemView) {
@@ -65,6 +74,12 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.PostViewHolder
 
             itemPostImage = itemView.findViewById(R.id.item_post_image);
             itemPostName = itemView.findViewById(R.id.item_post_name);
+//            tagT1 = itemView.findViewById(R.id.tag_type1);
+//            tagV1 = itemView.findViewById(R.id.tag_value1);
+//            tagT2 = itemView.findViewById(R.id.tag_type2);
+//            tagV2 = itemView.findViewById(R.id.tag_value2);
+//            tagT3 = itemView.findViewById(R.id.tag_type3);
+//            tagV3 = itemView.findViewById(R.id.tag_value3);
             button = itemView.findViewById(R.id.button_price);
         }
     }

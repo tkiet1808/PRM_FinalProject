@@ -34,6 +34,7 @@
             android:id="@+id/tag_type1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             android:layout_weight="1"
             android:gravity="center"
             android:text="MSI GF63"
@@ -44,6 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:visibility="gone"
             android:gravity="center"
             android:text="MSI GF63"
             android:textSize="12dp" />
@@ -62,6 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
+            android:visibility="gone"
             android:text="MSI GF63"
             android:textSize="12dp" />
 
@@ -72,6 +75,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="MSI GF63"
+            android:visibility="gone"
             android:textSize="12dp" />
     </LinearLayout>
 
@@ -88,6 +92,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="MSI GF63"
+            android:visibility="gone"
             android:textSize="12dp" />
 
         <TextView
@@ -96,6 +101,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
+            android:visibility="gone"
             android:text="MSI GF63"
             android:textSize="12dp" />
     </LinearLayout>

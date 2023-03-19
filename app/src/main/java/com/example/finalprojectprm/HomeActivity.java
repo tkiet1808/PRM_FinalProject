@@ -36,10 +36,10 @@ public class HomeActivity extends AppCompatActivity {
     }
     private List<PostList> getListPost() {
         List<PostList> list = new ArrayList<>();
-        list.add(new PostList(UUID.randomUUID(), "myname", "myimage", BigDecimal.ONE, new ArrayList<>()));
-        list.add(new PostList(UUID.randomUUID(), "myname", "myimage", BigDecimal.ONE, new ArrayList<>()));
-        list.add(new PostList(UUID.randomUUID(), "myname", "myimage", BigDecimal.ONE, new ArrayList<>()));
-        list.add(new PostList(UUID.randomUUID(), "myname", "myimage", BigDecimal.ONE, new ArrayList<>()));
+        list.add(new PostList(UUID.randomUUID(), "1", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaVBHl3QCN-g-R1YnYSdpluWn_Vix5kDlb05Fnr7Oq&s", BigDecimal.ONE, new ArrayList<>()));
+        list.add(new PostList(UUID.randomUUID(), "2", "myimage", BigDecimal.ONE, new ArrayList<>()));
+        list.add(new PostList(UUID.randomUUID(), "3", "myimage", BigDecimal.ONE, new ArrayList<>()));
+        list.add(new PostList(UUID.randomUUID(), "4", "myimage", BigDecimal.ONE, new ArrayList<>()));
         return list;
     }
     public void viewProfile_event(View view){
