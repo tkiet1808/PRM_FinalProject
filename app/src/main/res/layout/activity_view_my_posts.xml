@@ -2,23 +2,32 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <!-- Header -->
-    <include layout="@layout/toolbar"/>
 
     <!-- Post list -->
 
     <!-- Action buttons -->
-
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="35dp"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textColor="@color/teal_700"
+        android:text="My Post" />
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcvPost"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:id="@+id/rcv_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_weight="1"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="16dp"
-        android:padding="16dp" />
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2" />
 
     <LinearLayout
         android:layout_width="wrap_content"

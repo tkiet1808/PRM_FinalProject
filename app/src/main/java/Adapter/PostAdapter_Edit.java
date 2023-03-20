@@ -52,8 +52,10 @@ public class PostAdapter_Edit extends RecyclerView.Adapter<PostAdapter_Edit.Post
         Picasso.get().load(post.getImage()).placeholder(R.drawable.noimage).error(R.drawable.noimage).into(holder.itemPostImage);
 
         holder.itemPostName.setText(post.getName());
-        holder.button.setText(post.getPrice().toString());
         holder.description.setText(post.getDescription());
+        holder.category_name.setText(post.getCategory_name());
+        holder.button.setText(post.getPrice().toString());
+
         holder.editButton.setVisibility(View.VISIBLE);
         holder.editButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,12 +78,7 @@ public class PostAdapter_Edit extends RecyclerView.Adapter<PostAdapter_Edit.Post
         public ImageView itemPostImage;
         public Button editButton;
         public TextView description;
-//        public TextView tagT1;
-//        public TextView tagV1;
-//        public TextView tagT2;
-//        public TextView tagV2;
-//        public TextView tagT3;
-//        public TextView tagV3;
+        public TextView category_name;
 
         public Button button;
 
@@ -90,14 +87,10 @@ public class PostAdapter_Edit extends RecyclerView.Adapter<PostAdapter_Edit.Post
 
             itemPostImage = itemView.findViewById(R.id.item_post_image);
             itemPostName = itemView.findViewById(R.id.item_post_name);
-            editButton = itemView.findViewById(R.id.edit_post_button);
+            editButton = itemView.findViewById(R.id.post_button_in_item_post);
             description = itemView.findViewById(R.id.description_post_item);
-//            tagT1 = itemView.findViewById(R.id.tag_type1);
-//            tagV1 = itemView.findViewById(R.id.tag_value1);
-//            tagT2 = itemView.findViewById(R.id.tag_type2);
-//            tagV2 = itemView.findViewById(R.id.tag_value2);
-//            tagT3 = itemView.findViewById(R.id.tag_type3);
-//            tagV3 = itemView.findViewById(R.id.tag_value3);
+            category_name = itemView.findViewById(R.id.category_name_in_item_post);
+
             button = itemView.findViewById(R.id.button_price);
         }
     }

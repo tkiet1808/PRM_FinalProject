@@ -38,10 +38,10 @@ public class ViewMyPostsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_view_my_posts);
-        rcvPost = findViewById(R.id.rcvPost);
+        rcvPost = findViewById(R.id.rcv_post);
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-        rcvPost.setLayoutManager(linearLayoutManager);
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+//        rcvPost.setLayoutManager(linearLayoutManager);
 
         postAdapter = new Adapter.PostAdapter_Edit(this);
         postAdapter.setPostData(getListPost());

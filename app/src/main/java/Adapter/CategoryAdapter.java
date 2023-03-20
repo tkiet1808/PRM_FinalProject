@@ -1,6 +1,7 @@
 package Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +10,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.finalprojectprm.CreatePostActivity;
+import com.example.finalprojectprm.EditPostActivity;
 import com.example.finalprojectprm.R;
+import com.example.finalprojectprm.ViewMyPostsActivity;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
@@ -41,7 +47,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         if (category == null) {
             return;
         }
-        holder.textId.setText(category.getId());
+        holder.textId.setText(String.valueOf(category.getId()));
         holder.textName.setText(category.getName());
     }
 
@@ -54,10 +60,11 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         public TextView textId;
         public TextView textName;
 
+
         public CategoryViewHolder(@NonNull View itemView) {
             super(itemView);
-            textId = itemView.findViewById(R.id.text_id_field);
-            textName = itemView.findViewById(R.id.text_name_field);
+            textId = itemView.findViewById(R.id.text_id_field_category);
+            textName = itemView.findViewById(R.id.text_name_field_category);
         }
     }
 }

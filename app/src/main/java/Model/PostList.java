@@ -18,6 +18,7 @@ public class PostList {
     private String name;
     private String image;
     private String description;
+    private String category_name;
     private BigDecimal price;
     private List<Tag> tags;
 }

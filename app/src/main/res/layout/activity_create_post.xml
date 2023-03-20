@@ -18,12 +18,12 @@
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="10dp"
                 app:srcCompat="@mipmap/ic_logo_foreground" />
 
 
             <EditText
-                android:id="@+id/productNameEditText"
+                android:id="@+id/create_post_productNameEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -33,7 +33,7 @@
 
 
             <EditText
-                android:id="@+id/propertiesEditText"
+                android:id="@+id/create_post_propertiesEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -41,7 +41,7 @@
                 android:minHeight="48dp" />
 
             <EditText
-                android:id="@+id/descriptionEditText"
+                android:id="@+id/create_post_descriptionEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
@@ -49,18 +49,19 @@
                 android:minHeight="48dp" />
 
             <EditText
-                android:id="@+id/priceEditText"
+                android:id="@+id/create_post_priceEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:hint="Price"
                 android:minHeight="48dp" />
             <EditText
-                android:id="@+id/category_id"
+                android:id="@+id/create_post_category_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:hint="Category id"
+                android:textColor="@color/purple_500"
+                android:hint="Category id (click category name)"
                 android:minHeight="48dp" />
 
             <LinearLayout
@@ -110,6 +111,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rcv_category"
                 android:layout_width="match_parent"
+                android:minHeight="200dp"
+                android:background="@drawable/border"
                 android:layout_height="match_parent" />
 
             <LinearLayout
@@ -122,6 +125,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Create"
+                    android:onClick="create_post_event"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
                     />
@@ -131,6 +135,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
+                    android:onClick="cancel_create_post_event"
                     android:backgroundTint="#F82424"
                     android:text="Cancel"
                     />

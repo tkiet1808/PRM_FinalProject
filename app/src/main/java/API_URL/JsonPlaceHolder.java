@@ -1,6 +1,7 @@
 package API_URL;
 
-import com.example.finalprojectprm.PostRequest;
+import Model.PostFormRequest;
+import Model.PostRequest;
 
 import java.util.List;
 
@@ -11,12 +12,15 @@ import Model.LoginRequest;
 import Model.Post;
 import Model.PostList;
 import Model.RegisterRequest;
+import Model.StatusResponse;
 import Model.User;
 import Model.Wish;
-import Model.testModels;
+import Model.WishRequest;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.DELETE;
 import retrofit2.http.GET;
+import retrofit2.http.HTTP;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
@@ -47,11 +51,19 @@ public interface JsonPlaceHolder {
     Call<List<PostList>> getMyPost(@Path(value = "id")String id);
     @GET("posts/details/{id}")
     Call<Post> getPostDetails(@Path(value = "id")String id);
-    @POST("posts/")
+    @POST("posts/create")
+    Call<StatusResponse> createPost(@Body PostFormRequest postFormRequest);
+    @PUT("posts/update")
+    Call<StatusResponse> updatePost(@Body PostFormRequest postFormRequest);
 
     //wish url
     @GET("wishes/{id}")
     Call<List<Wish>> getWishList(@Path(value = "id")String id);
+    @POST("wishes/create")
+    Call<StatusResponse> createWish(@Body WishRequest wishRequest);
+
+    @HTTP(method = "DELETE", path = "wishes/delete", hasBody = true)
+    Call<StatusResponse> deleteWish(@Body WishRequest wishRequest);
 
     @GET("categories")
     Call<List<Category>> getCategories();

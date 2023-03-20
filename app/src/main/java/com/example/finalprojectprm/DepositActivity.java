@@ -42,4 +42,10 @@ public class DepositActivity extends AppCompatActivity {
         Intent i = new Intent(DepositActivity.this,ViewProfileActivity.class);
         startActivity(i);
     }
+
+    public void backToHome_event(View v) {
+        Toast.makeText(v.getContext(), "back to home!", Toast.LENGTH_SHORT).show();
+        Intent i = new Intent(DepositActivity.this,HomeActivity.class);
+        startActivity(i);
+    }
 }

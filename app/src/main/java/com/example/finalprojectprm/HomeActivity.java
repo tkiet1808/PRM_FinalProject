@@ -1,6 +1,7 @@
 package com.example.finalprojectprm;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -15,8 +16,11 @@ import java.util.UUID;
 
 import API_URL.JsonPlaceHolder;
 import Adapter.PostAdapter;
+import Model.MyApplication;
 import Model.PostList;
+import Model.StatusResponse;
 import Model.Tag;
+import Model.WishRequest;
 import RetroFitInstance.RetrofitInstance;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -32,8 +36,17 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        Intent i = getIntent();
+        if (i.hasExtra("add_wish_id")){
+            add_wishlist(i.getStringExtra("add_wish_id"));
+        }
+
+
         rcvPost = findViewById(R.id.rcv_post);
 
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+//        rcvPost.setLayoutManager(linearLayoutManager);
         postAdapter = new PostAdapter(this);
         postAdapter.setPostData(getListPost());
 
@@ -88,5 +101,38 @@ public class HomeActivity extends AppCompatActivity {
         Toast.makeText( HomeActivity.this, "Wishlist", Toast.LENGTH_SHORT).show();
         Intent i = new Intent(HomeActivity.this, ViewWishlistActivity.class);
         startActivity(i);
+    }
+
+    private void add_wishlist(String post_id){
+        apiInterface = RetrofitInstance.getRetrofit().create(JsonPlaceHolder.class);
+        apiInterface.createWish(WishRequest.builder().post_id(post_id).user_id(((MyApplication) this.getApplication()).getUser_id()).build()).enqueue(new Callback<StatusResponse>() {
+            @Override
+            public void onResponse(Call<StatusResponse> call, Response<StatusResponse> response) {
+                if (response.isSuccessful()) {
+
+                    if (response.body() != null) {
+                        StatusResponse d = response.body();
+                        if (d.getStatus()==0){
+
+                            Toast.makeText( HomeActivity.this, "Added to wishlist", Toast.LENGTH_SHORT).show();
+                        }
+
+
+                    } else {
+                        Toast.makeText(HomeActivity.this, "Fail!", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(HomeActivity.this, "Already had!", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+
+            @Override
+            public void onFailure(Call<StatusResponse> call, Throwable t) {
+                Toast.makeText(HomeActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
     }
 }

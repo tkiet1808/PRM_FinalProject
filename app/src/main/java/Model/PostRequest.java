@@ -1,6 +1,7 @@
 package Model;
 
 import java.math.BigDecimal;
+import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.List;
 import java.util.UUID;
@@ -14,20 +15,20 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Post {
+public class PostRequest {
     private UUID id;
+
     private String name;
+
     private String image;
+
     private String description;
-    private Long created;
-    private Long updated;
+    private String categoryName;
+    private Timestamp created;
+    private Timestamp updated;
     private BigDecimal price;
     private BigDecimal paid;
     private int status;
-    private Category category;
-    private String category_name;
-    private String category_id;
-    private User user;
-    private List<Wish> wishlist;
-    private List<Tag> tags;
+
+
 }
