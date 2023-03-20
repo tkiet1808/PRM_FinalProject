@@ -4,6 +4,7 @@ import com.example.finalprojectprm.PostRequest;
 
 import java.util.List;
 
+import Model.Category;
 import Model.DepositRequest;
 import Model.EditUserModel;
 import Model.LoginRequest;
@@ -51,5 +52,8 @@ public interface JsonPlaceHolder {
     //wish url
     @GET("wishes/{id}")
     Call<List<Wish>> getWishList(@Path(value = "id")String id);
+
+    @GET("categories")
+    Call<List<Category>> getCategories();
 
 }
