@@ -6,45 +6,46 @@
     android:layout_height="wrap_content"
     android:gravity="center"
     android:background="@drawable/border"
-    android:layout_marginLeft="7dp"
-    android:layout_marginRight="7dp"
+    android:layout_marginLeft="3dp"
+    android:layout_marginRight="3dp"
     android:layout_marginBottom="7dp"
     android:layout_marginTop="7dp"
     android:orientation="vertical">
 
     <ImageView
         android:id="@+id/item_post_image"
-        android:layout_width="150dp"
+        android:layout_width="140dp"
         android:layout_height="175dp"
-        android:layout_weight="1"
         app:srcCompat="@drawable/avatar" />
 
     <TextView
         android:id="@+id/item_post_name"
-        android:layout_width="match_parent"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
         android:gravity="center"
+        android:textColor="@color/black_500"
+        android:minLines="2"
+        android:maxLines="2"
         android:textSize="20dp"
-        android:layout_weight="1"
         android:text="MSI GF63" />
     <TextView
         android:id="@+id/description_post_item"
-        android:layout_width="match_parent"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textSize="10dp"
-        android:layout_weight="1"
+        android:maxLines="3"
+        android:minLines="3"
         android:text="Description" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <TextView
             android:id="@+id/cate_text"
-            android:layout_width="120dp"
+            android:layout_width="55dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="left"
@@ -54,9 +55,8 @@
 
         <TextView
             android:id="@+id/category_name_in_item_post"
-            android:layout_width="match_parent"
+            android:layout_width="75dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:gravity="center"
             android:textColor="@color/light_blue_600"
             android:text="Unknown"
@@ -64,71 +64,18 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/tag_type2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:visibility="gone"
-            android:text="MSI GF63"
-            android:textSize="12dp" />
 
-        <TextView
-            android:id="@+id/tag_value2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="MSI GF63"
-            android:visibility="gone"
-            android:textSize="12dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/tag_type3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="MSI GF63"
-            android:visibility="gone"
-            android:textSize="12dp" />
-
-        <TextView
-            android:id="@+id/tag_value3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:visibility="gone"
-            android:text="MSI GF63"
-            android:textSize="12dp" />
-    </LinearLayout>
 
     <Button
         android:id="@+id/button_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:text="20,000,000" />
     <Button
         android:id="@+id/post_button_in_item_post"
-        android:layout_width="wrap_content"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:visibility="gone"
         android:backgroundTint="@color/blue_500"
         android:text="Edit" />

@@ -54,7 +54,7 @@ public class PostAdapter_Edit extends RecyclerView.Adapter<PostAdapter_Edit.Post
         holder.itemPostName.setText(post.getName());
         holder.description.setText(post.getDescription());
         holder.category_name.setText(post.getCategory_name());
-        holder.button.setText(post.getPrice().toString());
+        holder.button.setText(String.valueOf(post.getPrice().intValue()));
 
         holder.editButton.setVisibility(View.VISIBLE);
         holder.editButton.setOnClickListener(new View.OnClickListener() {

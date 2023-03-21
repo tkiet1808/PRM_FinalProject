@@ -64,6 +64,8 @@ public class ViewWishlistActivity extends AppCompatActivity {
                         if (d.getStatus()==0){
 
                             Toast.makeText( ViewWishlistActivity.this, "Removed from wishlist", Toast.LENGTH_SHORT).show();
+                            Intent i = new Intent(ViewWishlistActivity.this, ViewWishlistActivity.class);
+                            startActivity(i);
                         }
 
 

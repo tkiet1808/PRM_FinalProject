@@ -7,8 +7,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -71,6 +74,7 @@ public class EditPostActivity extends AppCompatActivity {
                         TextView price = findViewById(R.id.edit_post_priceEditText);
                         TextView cateId = findViewById(R.id.edit_post_category_id);
                         TextView postId = findViewById(R.id.edit_post_post_id);
+                        ImageView img = findViewById(R.id.edit_post_image);
 
                         product.setText(post.getName());
                         image.setText(post.getImage());
@@ -78,6 +82,8 @@ public class EditPostActivity extends AppCompatActivity {
                         price.setText(post.getPrice().toString());
                         cateId.setText(post.getCategory_id());
                         postId.setText(post.getId().toString());
+                        Picasso.get().load(post.getImage()).placeholder(R.drawable.noimage).error(R.drawable.noimage).into(img);
+
 
                     } else {
                         Toast.makeText(EditPostActivity.this, "Fail!", Toast.LENGTH_SHORT).show();

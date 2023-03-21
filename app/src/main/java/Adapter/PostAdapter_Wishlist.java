@@ -54,10 +54,9 @@ public class PostAdapter_Wishlist extends RecyclerView.Adapter<PostAdapter_Wishl
         Picasso.get().load(post.getImage()).placeholder(R.drawable.noimage).error(R.drawable.noimage).into(holder.itemPostImage);
 
         holder.itemPostName.setText(post.getName());
-        holder.button.setText(post.getPrice().toString());
+        holder.button.setText(String.valueOf(post.getPrice().intValue()));
         holder.category_name.setText(post.getCategory_name());
         holder.description.setText(post.getDescription());
-        holder.button.setText(post.getPrice().toString());
 
         holder.remove_wish_button.setVisibility(View.VISIBLE);
         holder.remove_wish_button.setText("Remove");
